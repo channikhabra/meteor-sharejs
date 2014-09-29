@@ -1,8 +1,8 @@
 Package.describe({
-  name: "mizzao:sharejs",
+  name: "channikhabra:sharejs-clone",
   summary: "server (& client library) to allow concurrent editing of any kind of content",
-  version: "0.6.1",
-  git: "https://github.com/mizzao/meteor-sharejs.git"
+  version: "0.6.3",
+  git: "https://github.com/channikhabra/meteor-sharejs.git"
 });
 
 Npm.depends({
@@ -85,7 +85,7 @@ Package.onUse(function (api) {
   api.addFiles(aceJS, 'client', { bare: true });
 
   // Add Ace files as assets that can be loaded by the client later
-  var aceSettings = getFilesFromFolder("mizzao:sharejs", "ace-builds/src");
+  var aceSettings = getFilesFromFolder("channikhabra:sharejs-clone", "ace-builds/src");
   api.addFiles(_.without(aceSettings, aceJS), 'client', {isAsset: true});
 
   // Add the ShareJS connectors
@@ -116,7 +116,7 @@ Package.onTest(function (api) {
     'test-helpers'
   ]);
 
-  api.use("mizzao:sharejs");
+  api.use("channikhabra:sharejs-clone");
 
   api.addFiles('tests/server_tests.coffee', 'server');
 });
